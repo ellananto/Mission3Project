@@ -7,6 +7,7 @@ namespace Mission3Project
     public class SupportingClass
     {
 
+        // display in-play board, each dictionary spot will hold a players spot selection
         public void UpdatedBoard(Dictionary<int, string> dict)
         {
             Console.WriteLine("     |     |      ");
@@ -21,7 +22,7 @@ namespace Mission3Project
         }
 
 
-        // method 
+        // display intial board method 
         public void Board(Dictionary<int, string> dict)
         {
             Console.WriteLine("     |     |      ");

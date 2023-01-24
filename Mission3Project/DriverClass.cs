@@ -53,6 +53,9 @@ namespace Mission3Project
             }
 
             // call method to print resulting board
+            Console.WriteLine("This is the final board.");
+            supporting.UpdatedBoard(GameBoard);
+
             // call method to determine who won
 
         }
