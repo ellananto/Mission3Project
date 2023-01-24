@@ -6,13 +6,13 @@ namespace Mission3Project
     class DriverClass
     {
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-        static void Main(string[] args)
+
+        void Main(string[] args)
         {
             // Welcome the user to the game
             Console.WriteLine("Welcome to the Tic-Tac-Toe Game Simulator!");
             // Create dictionary to hold places on the board
             Dictionary<int, string> GameBoard = new Dictionary<int, string>();
-            // array of positions
 
             // preset the positions into the dictionary
             GameBoard.Add(1, " ");
@@ -33,25 +33,25 @@ namespace Mission3Project
             for (int i = 0; i < 4; i++)
             {
                 // User Input for Game Position
-                Console.WriteLine("Player1, where would you like to put your O? (1, 2, etc.)");
+                Console.WriteLine("Player 1, where would you like to put your O? (1, 2, etc.)");
                 int Player1Move = Convert.ToInt32(Console.ReadLine());
-                // check if the space is available 
                 GameBoard[Player1Move] = "O";
                 UpdatedBoard();
 
-                if (i <= 2)
-                {
-                    Console.WriteLine("Player2, where would you like to put your X? (1, 2, etc.)");
-                    int Player2Move = Convert.ToInt32(Console.ReadLine());
-                    GameBoard[Player2Move] = "X";
-                    UpdatedBoard();
-                }
+                // user input for the game position
+                Console.WriteLine("Player 2, where would you like to put your X? (1, 2, etc.)");
+                int Player2Move = Convert.ToInt32(Console.ReadLine());
+                GameBoard[Player2Move] = "X";
+                UpdatedBoard();
 
-                // call method to print resulting board
-                // call method to determine who won
             }
 
+            // call method to print resulting board
+            // call method to determine who won
 
+        }
+
+            // outline of the board with numeric positions
             static void Board()
             {
                 Console.WriteLine("     |     |      ");
@@ -65,7 +65,8 @@ namespace Mission3Project
                 Console.WriteLine("     |     |      ");
             }
 
-             void UpdatedBoard()
+            // updated board 
+            void UpdatedBoard()
             {
                 Console.WriteLine("     |     |      ");
                 Console.WriteLine("  {0}  |  {1}  |  {2}", GameBoard[1], GameBoard[2], GameBoard[3]);
@@ -77,6 +78,7 @@ namespace Mission3Project
                 Console.WriteLine("  {0}  |  {1}  |  {2}", GameBoard[7], GameBoard[8], GameBoard[9]);
                 Console.WriteLine("     |     |      ");
             }
+        
         }
     }
 }
