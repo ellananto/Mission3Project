@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 namespace Mission3Project
 {
+
     class DriverClass
-    {
+    {  
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-        void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Welcome the user to the game
             Console.WriteLine("Welcome to the Tic-Tac-Toe Game Simulator!");
@@ -27,7 +28,12 @@ namespace Mission3Project
 
             Console.WriteLine("For inputting moves, you can choose one of the following positions in the board (1, 2, 3)");
             Console.WriteLine("Reminder: You cannot take a spot already taken by another player.");
-            Board();
+
+            // Getting a "supporting" object from the SupportingClass
+            SupportingClass supporting = new SupportingClass();
+
+            // Using the Board method
+            supporting.Board(GameBoard);
 
             // loop for enter positions into the dictionary based on position from user input
             for (int i = 0; i < 4; i++)
@@ -36,13 +42,13 @@ namespace Mission3Project
                 Console.WriteLine("Player 1, where would you like to put your O? (1, 2, etc.)");
                 int Player1Move = Convert.ToInt32(Console.ReadLine());
                 GameBoard[Player1Move] = "O";
-                UpdatedBoard();
+                supporting.UpdatedBoard(GameBoard);
 
                 // user input for the game position
                 Console.WriteLine("Player 2, where would you like to put your X? (1, 2, etc.)");
                 int Player2Move = Convert.ToInt32(Console.ReadLine());
                 GameBoard[Player2Move] = "X";
-                UpdatedBoard();
+                supporting.UpdatedBoard(GameBoard);
 
             }
 
@@ -51,34 +57,7 @@ namespace Mission3Project
 
         }
 
-            // outline of the board with numeric positions
-            static void Board()
-            {
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
-                Console.WriteLine("_____|_____|_____ ");
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
-                Console.WriteLine("_____|_____|_____ ");
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
-                Console.WriteLine("     |     |      ");
-            }
+        // outline of the board with numeric positions
 
-            // updated board 
-            void UpdatedBoard()
-            {
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", GameBoard[1], GameBoard[2], GameBoard[3]);
-                Console.WriteLine("_____|_____|_____ ");
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", GameBoard[4], GameBoard[5], GameBoard[6]);
-                Console.WriteLine("_____|_____|_____ ");
-                Console.WriteLine("     |     |      ");
-                Console.WriteLine("  {0}  |  {1}  |  {2}", GameBoard[7], GameBoard[8], GameBoard[9]);
-                Console.WriteLine("     |     |      ");
-            }
-        
-        }
     }
 }
