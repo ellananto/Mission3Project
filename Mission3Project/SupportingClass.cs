@@ -44,44 +44,44 @@ namespace Mission3Project
         {
             bool isTie = true;
             // Horizontal winning combos
-            if (dict[1] == dict[2] && dict[2] == dict[3])
+            if (dict[1] == dict[2] && dict[2] == dict[3] && dict[1]!= " ")
             { 
                 return 1;
             }
-            else if (dict[4] == dict[5] && dict[5] == dict[6])
+            else if (dict[4] == dict[5] && dict[5] == dict[6] && dict[4] != " ")
             {
                 return 1;
             }
-            else if (dict[7] == dict[8] && dict[8] == dict[9])
+            else if (dict[7] == dict[8] && dict[8] == dict[9] && dict[7] != " ")
             {
                 return 1;
             }
             // Vertical winning combos
-            else if (dict[1] == dict[4] && dict[4] == dict[7])
+            else if (dict[1] == dict[4] && dict[4] == dict[7] && dict[1] != " ")
             {
                 return 1;
             }
-            else if (dict[2] == dict[5] && dict[5] == dict[8])
+            else if (dict[2] == dict[5] && dict[5] == dict[8] && dict[2] != " ")
             {
                 return 1;
             }
-            else if (dict[3] == dict[6] && dict[6] == dict[9])
+            else if (dict[3] == dict[6] && dict[6] == dict[9] && dict[6] != " ")
             {
                 return 1;
             }
             // Diagonal Winning combos
-            else if (dict[1] == dict[5] && dict[5] == dict[9])
+            else if (dict[1] == dict[5] && dict[5] == dict[9] && dict[5] != " ")
             {
                 return 1;
             }
-            else if (dict[3] == dict[5] && dict[5] == dict[7])
+            else if (dict[3] == dict[5] && dict[5] == dict[7] && dict[3] != " ")
             {
                 return 1;
             }
             // Check for tie
             else
             {
-                for (int i = 0; i < dict.Count; i++)
+                for (int i = 1; i < dict.Count; i++)
                 {
                     if (dict[i] != "O" && dict[i] != "X")
                     {
