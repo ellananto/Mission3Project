@@ -35,22 +35,28 @@ namespace Mission3Project
             // Using the Board method
             supporting.Board(GameBoard);
 
+            int checkWin = 0;
+
             // loop for enter positions into the dictionary based on position from user input
-            for (int i = 0; i < 4; i++)
+            do
             {
                 // User Input for Game Position
                 Console.WriteLine("Player 1, where would you like to put your O? (1, 2, etc.)");
                 int Player1Move = Convert.ToInt32(Console.ReadLine());
                 GameBoard[Player1Move] = "O";
                 supporting.UpdatedBoard(GameBoard);
+                checkWin = supporting.WinnerWinnerChickenDinner(GameBoard);
 
                 // user input for the game position
                 Console.WriteLine("Player 2, where would you like to put your X? (1, 2, etc.)");
                 int Player2Move = Convert.ToInt32(Console.ReadLine());
                 GameBoard[Player2Move] = "X";
                 supporting.UpdatedBoard(GameBoard);
+                checkWin = supporting.WinnerWinnerChickenDinner(GameBoard);
 
             }
+
+            while (checkWin != -1 && checkWin != 1);
 
             // call method to print resulting board
             Console.WriteLine("This is the final board.");
