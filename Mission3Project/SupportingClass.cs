@@ -92,6 +92,7 @@ namespace Mission3Project
                 {
                     return -1;
                 }
+                // If not tie or win, then continue game
                 else
                 {
                     return 0;
